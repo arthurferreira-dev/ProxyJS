@@ -1,6 +1,8 @@
 # ProxyJS
 
-<img src="https://img.shields.io/badge/Version-1.0%20(Beta)-6320d6" alt="Version - Badge">
+<img src="https://img.shields.io/badge/Version-0.1.0%20(Beta)-6320d6" alt="Version - Badge">
+<img alt="NPM Version" src="https://img.shields.io/npm/v/proxyjs-web">
+<svg xmlns="http://www.w3.org/2000/svg" width="133.5" height="28" role="img" aria-label="PROXYJSWEB"><title>PROXYJSWEB</title><g shape-rendering="crispEdges"><rect width="133.5" height="28" fill="#e05d44"/></g><g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="100"><image x="9" y="7" width="14" height="14" href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSJ3aGl0ZXNtb2tlIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+bnBtPC90aXRsZT48cGF0aCBkPSJNMS43NjMgMEMuNzg2IDAgMCAuNzg2IDAgMS43NjN2MjAuNDc0QzAgMjMuMjE0Ljc4NiAyNCAxLjc2MyAyNGgyMC40NzRjLjk3NyAwIDEuNzYzLS43ODYgMS43NjMtMS43NjNWMS43NjNDMjQgLjc4NiAyMy4yMTQgMCAyMi4yMzcgMHpNNS4xMyA1LjMyM2wxMy44MzcuMDE5LS4wMDkgMTMuODM2aC0zLjQ2NGwuMDEtMTAuMzgyaC0zLjQ1NkwxMi4wNCAxOS4xN0g1LjExM3oiLz48L3N2Zz4="/><text transform="scale(.1)" x="767.5" y="175" textLength="895" fill="#fff" font-weight="bold">PROXYJS-WEB</text></g></svg>
 
 <p align="center">
   <img src="https://i.postimg.cc/2ydY08wy/proxyjs-logo-nobg.png" width="80" alt="ProxyJS logo" />
@@ -11,6 +13,12 @@ ProxyJS é uma biblioteca JavaScript reativa minimalista inspirada no Vue e no R
 ---
 
 ## Instalação
+
+### Via NPM
+
+```shell
+npm install proxyjs-web
+```
 
 ProxyJS é usado diretamente via módulos ES. Basta importar do `index.js`:
 

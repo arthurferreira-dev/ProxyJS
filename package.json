@@ -1,5 +1,5 @@
 {
-  "name": "proxyjs",
+  "name": "proxyjs-web",
   "version": "0.1.0-beta",
   "type": "module",
   "description": "Biblioteca JavaScript reativa minimalista baseada em Proxy nativo do JavaScript e inspirada em frameworks/bibliotecas como React, Vue, JQuery e Preact.",
