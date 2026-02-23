@@ -1,0 +1,17 @@
+{
+  "name": "proxyjs",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Biblioteca JavaScript reativa minimalista baseada em Proxy nativo do JavaScript e inspirada em frameworks/bibliotecas como React, Vue, JQuery e Preact.",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src/"
+  ],
+  "keywords": ["reactive", "proxy", "frontend", "javascript", "ProxyJS", "proxyjs"],
+  "author": "arthurferreira-dev",
+  "license": "AGPL-3.0-only"
+}
