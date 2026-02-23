@@ -394,3 +394,17 @@ const router = createRouter([
 
 renderToRoot(router, "#app");
 ```
+
+## Usar o ProxyJS via cdn:
+
+### Versão Fixa:
+
+```javascript
+import Proxy, { html, newState, renderToRoot } from "https://cdn.jsdelivr.net/gh/arthurferreira-dev/ProxyJS/src/index.js";
+```
+
+### Versão Atual:
+
+```javascript
+import Proxy, { html, newState, renderToRoot } from "https://cdn.jsdelivr.net/gh/arthurferreira-dev/ProxyJS@6a9e0a4/src/index.js"; /* Versão atual (v0.1.0-beta) */
+```
