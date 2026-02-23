@@ -11,7 +11,19 @@
   "files": [
     "src/"
   ],
-  "keywords": ["reactive", "proxy", "frontend", "javascript", "ProxyJS", "proxyjs"],
+  "keywords": [
+    "reactive",
+    "proxy",
+    "frontend",
+    "javascript",
+    "ProxyJS",
+    "proxyjs",
+    "Web"
+  ],
+  "bugs": {
+    "url": "https://github.com/arthurferreira-dev/ProxyJS/issues"
+  },
+  "homepage": "https://github.com/arthurferreira-dev/ProxyJS#readme",
   "author": "arthurferreira-dev",
   "license": "AGPL-3.0-only"
 }
