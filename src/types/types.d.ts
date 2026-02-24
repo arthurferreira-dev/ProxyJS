@@ -1,0 +1,15 @@
+export declare function reactive(target: object): any;
+export declare function effect(fn: () => void): void;
+export declare function computed(fn: () => any): () => any;
+export declare function newState<T>(initial: T): [() => T, (value: T) => void];
+export declare function createRoot(container: string | Element): { render(component: Function): void };
+export declare function renderToRoot(component: Function, container: string | Element): void;
+export declare function registerComponent(name: string, component: Function): void;
+export declare function createStyle(css: string): Record<string, string>;
+export declare function createRouter(routes: { path: string, component: Function }[]): Function;
+export declare function navigate(path: string): void;
+export declare function newNavigate(): (path: string) => void;
+export declare function currentPath(): string;
+export declare const html: Record<string, (...args: any[]) => any>;
+declare const ProxyJS: { fragment: (...children: any[]) => any };
+export default ProxyJS;
