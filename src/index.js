@@ -12,6 +12,9 @@ export {
   currentPath,
 } from "./hooks/newNavigate.js";
 export { newState } from "./hooks/newState.js";
+export { newEffect } from "./hooks/newEffect.js";
+export { newMemo } from "./hooks/newMemo.js";
+export { newRef } from "./hooks/newRef.js";
 
 import { createElement, Fragment } from "./dom/createElement.js";
 import { ErrorBoundary } from "./core/errorBoundary.js";

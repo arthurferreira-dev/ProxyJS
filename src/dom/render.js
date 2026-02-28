@@ -10,11 +10,8 @@ export function render(vnode, container) {
     container.__vnode = vnode;
     container.appendChild(el);
   } else {
-    container.innerHTML = "";
-    container.__vnode = null;
-    const el = mount(vnode, container);
+    patch(container, oldVnode, vnode);
     container.__vnode = vnode;
-    container.appendChild(el);
   }
 }
 
@@ -44,56 +41,38 @@ function mount(vnode, parentEl, errorHandler) {
   return mountElement(vnode, errorHandler);
 }
 
+const voidTags = new Set([
+  "area",
+  "base",
+  "br",
+  "col",
+  "embed",
+  "hr",
+  "img",
+  "input",
+  "link",
+  "meta",
+  "param",
+  "source",
+  "track",
+  "wbr",
+]);
+
 function mountElement(vnode, errorHandler) {
-  const isErrorBoundary = vnode.props?.__errorBoundary;
-  const fallback = vnode.props?.__fallback;
-
   const el = document.createElement(vnode.type);
+  patchProps(el, {}, vnode.props);
 
-  const cleanProps = { ...vnode.props };
-  delete cleanProps.__errorBoundary;
-  delete cleanProps.__fallback;
-  patchProps(el, {}, cleanProps);
+  if (vnode.props?.ref) {
+    vnode.props.ref.current = el;
+  }
 
-  const children = normalizeChildren(vnode.children);
-
-  const boundaryHandler = isErrorBoundary
-    ? (err) => {
-        console.error("[ProxyJS] Erro capturado pelo ErrorBoundary:", err);
-        el.innerHTML = "";
-        const fallbackVnode = fallback
-          ? fallback(err)
-          : {
-              type: "div",
-              props: {
-                style:
-                  "padding:1rem;background:#fee2e2;color:#991b1b;border-radius:6px;font-family:monospace",
-              },
-              children: [
-                { type: "strong", props: {}, children: ["⚠ Algo deu errado"] },
-                {
-                  type: "p",
-                  props: {},
-                  children: [err.message || String(err)],
-                },
-              ],
-            };
-        el.appendChild(mount(fallbackVnode, el, null));
-      }
-    : errorHandler;
-
-  children.forEach((child) => {
-    if (child == null) return;
-    try {
-      el.appendChild(mount(child, el, boundaryHandler));
-    } catch (err) {
-      if (boundaryHandler) {
-        boundaryHandler(err);
-      } else {
-        throw err;
-      }
-    }
-  });
+  if (!voidTags.has(vnode.type)) {
+    const children = normalizeChildren(vnode.children);
+    children.forEach((child) => {
+      if (child == null) return;
+      el.appendChild(mount(child, el, errorHandler));
+    });
+  }
 
   el.__vnode = vnode;
   return el;
@@ -314,7 +293,7 @@ function patchProps(el, oldProps, newProps) {
   }
 
   for (const key in newProps) {
-    if (key === "key") continue;
+    if (key === "key" || key === "ref") continue;
     const newVal = newProps[key];
     const oldVal = oldProps[key];
 
